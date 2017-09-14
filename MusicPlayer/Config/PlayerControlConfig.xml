@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PlayerControlConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <LastEqSettings>Default</LastEqSettings>
+  <LastPlayed />
+  <PlayType>Normal</PlayType>
+  <volume>0.75</volume>
+</PlayerControlConfig>

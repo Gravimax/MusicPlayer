@@ -1,0 +1,90 @@
+﻿<Window
+    x:Class="MusicPlayer.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="clr-namespace:MusicPlayer.PartialControls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:MusicPlayer"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:tb="http://www.hardcodet.net/taskbar"
+    Title="Music Player"
+    Width="1400"
+    Height="768"
+    Closing="Window_Closing"
+    DataContext="{Binding Source={StaticResource Locator}, Path=ApplicationVM}"
+    Icon="/Resources/Icons/MPAppIcon.ico"
+    mc:Ignorable="d">
+    <Window.TaskbarItemInfo>
+        <TaskbarItemInfo Description="Control your media" ThumbnailClipMargin="5">
+            <TaskbarItemInfo.ThumbButtonInfos>
+                <ThumbButtonInfoCollection>
+                    <ThumbButtonInfo
+                        x:Name="ThumbPreviousButton"
+                        Command="{Binding PreviousSelectionCommand}"
+                        Description="Previous"
+                        DismissWhenClicked="False"
+                        ImageSource="/Resources/Icons/Previous.png" />
+                    <ThumbButtonInfo
+                        x:Name="ThumbPlayButton"
+                        Command="{Binding PlayPauseSelectionCommand}"
+                        Description="Play/Pause"
+                        DismissWhenClicked="False"
+                        ImageSource="/Resources/Icons/Play.png" />
+                    <ThumbButtonInfo
+                        x:Name="ThumbStopButton"
+                        Command="{Binding StopSelectionCommand}"
+                        Description="Stop"
+                        DismissWhenClicked="False"
+                        ImageSource="/Resources/Icons/Stop.png" />
+                    <ThumbButtonInfo
+                        x:Name="ThumbNextButton"
+                        Command="{Binding NextSelectionCommand}"
+                        Description="Next"
+                        DismissWhenClicked="False"
+                        ImageSource="/Resources/Icons/Next.png" />
+                </ThumbButtonInfoCollection>
+            </TaskbarItemInfo.ThumbButtonInfos>
+        </TaskbarItemInfo>
+    </Window.TaskbarItemInfo>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+        <tb:TaskbarIcon
+            x:Name="tb"
+            VerticalAlignment="Top"
+            IconSource="/Resources/Icons/MPAppIcon.ico"
+            MenuActivation="{Binding Path=SelectedItem, ElementName=lstMenuTrigger, Mode=Default}"
+            PopupActivation="{Binding Path=SelectedItem, ElementName=lstPopupTrigger, Mode=Default}"
+            ToolTipText="{Binding Path=Text, ElementName=txtToolTipText, Mode=Default}" />
+        <controls:MainMenu
+            Grid.Row="0"
+            Grid.ColumnSpan="2"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch" />
+        <controls:MasterList
+            x:Name="masterList"
+            Grid.Row="1"
+            Grid.Column="0"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch" />
+        <controls:PlayerControls
+            x:Name="playerControl"
+            Grid.Row="2"
+            Grid.ColumnSpan="2"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch" />
+        <controls:PlayListControls
+            x:Name="playerListControls"
+            Grid.Row="1"
+            Grid.Column="1"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch" />
+    </Grid>
+</Window>

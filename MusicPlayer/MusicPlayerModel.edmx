@@ -1,0 +1,313 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="MediaPlayerDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Genre">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Library">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="256" Nullable="false" />
+          <Property Name="Path" Type="nvarchar" MaxLength="256" Nullable="false" />
+          <Property Name="WatchFolder" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LibraryFolder">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="256" Nullable="false" />
+          <Property Name="Path" Type="nvarchar" MaxLength="256" Nullable="false" />
+          <Property Name="LibraryId" Type="int" Nullable="false" />
+          <Property Name="IsExpanded" Type="bit" Nullable="false" />
+          <Property Name="ParentFolder" Type="nvarchar" MaxLength="256" />
+        </EntityType>
+        <EntityType Name="MediaItem">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Album" Type="nvarchar" MaxLength="100" />
+          <Property Name="Artist" Type="nvarchar" MaxLength="100" />
+          <Property Name="BitRate" Type="int" Nullable="false" />
+          <Property Name="Comment" Type="nvarchar" MaxLength="300" />
+          <Property Name="Duration" Type="bigint" Nullable="false" />
+          <Property Name="FilePath" Type="nvarchar" MaxLength="256" Nullable="false" />
+          <Property Name="Folder" Type="nvarchar" MaxLength="256" />
+          <Property Name="Genre" Type="nvarchar" MaxLength="100" />
+          <Property Name="Title" Type="nvarchar" MaxLength="100" />
+          <Property Name="Year" Type="int" />
+          <Property Name="Track" Type="int" />
+          <Property Name="Type" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Playlist">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PlaylistItem">
+          <Key>
+            <PropertyRef Name="PlaylistId" />
+            <PropertyRef Name="MediaItemId" />
+          </Key>
+          <Property Name="PlaylistId" Type="int" Nullable="false" />
+          <Property Name="MediaItemId" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_LibraryFolder_Library">
+          <End Role="Library" Type="Self.Library" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="LibraryFolder" Type="Self.LibraryFolder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Library">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="LibraryFolder">
+              <PropertyRef Name="LibraryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PlaylistItem_MediaItem">
+          <End Role="MediaItem" Type="Self.MediaItem" Multiplicity="1" />
+          <End Role="PlaylistItem" Type="Self.PlaylistItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MediaItem">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PlaylistItem">
+              <PropertyRef Name="MediaItemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PlaylistItem_Playlist">
+          <End Role="Playlist" Type="Self.Playlist" Multiplicity="1" />
+          <End Role="PlaylistItem" Type="Self.PlaylistItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Playlist">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PlaylistItem">
+              <PropertyRef Name="PlaylistId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="MediaPlayerDBModelStoreContainer">
+          <EntitySet Name="Genre" EntityType="Self.Genre" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Library" EntityType="Self.Library" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LibraryFolder" EntityType="Self.LibraryFolder" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MediaItem" EntityType="Self.MediaItem" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Playlist" EntityType="Self.Playlist" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PlaylistItem" EntityType="Self.PlaylistItem" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_LibraryFolder_Library" Association="Self.FK_LibraryFolder_Library">
+            <End Role="Library" EntitySet="Library" />
+            <End Role="LibraryFolder" EntitySet="LibraryFolder" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PlaylistItem_MediaItem" Association="Self.FK_PlaylistItem_MediaItem">
+            <End Role="MediaItem" EntitySet="MediaItem" />
+            <End Role="PlaylistItem" EntitySet="PlaylistItem" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PlaylistItem_Playlist" Association="Self.FK_PlaylistItem_Playlist">
+            <End Role="Playlist" EntitySet="Playlist" />
+            <End Role="PlaylistItem" EntitySet="PlaylistItem" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MediaPlayerDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="MediaPlayerDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Genres" EntityType="MediaPlayerDBModel.Genre" />
+          <EntitySet Name="Libraries" EntityType="MediaPlayerDBModel.Library" />
+          <EntitySet Name="LibraryFolders" EntityType="MediaPlayerDBModel.LibraryFolder" />
+          <EntitySet Name="Playlists" EntityType="MediaPlayerDBModel.Playlist" />
+          <AssociationSet Name="FK_LibraryFolder_Library" Association="MediaPlayerDBModel.FK_LibraryFolder_Library">
+            <End Role="Library" EntitySet="Libraries" />
+            <End Role="LibraryFolder" EntitySet="LibraryFolders" />
+          </AssociationSet>
+          <EntitySet Name="MediaItems" EntityType="MediaPlayerDBModel.MediaItem" />
+          <AssociationSet Name="PlaylistItem" Association="MediaPlayerDBModel.PlaylistItem">
+            <End Role="MediaItem" EntitySet="MediaItems" />
+            <End Role="Playlist" EntitySet="Playlists" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Genre">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Library">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="Path" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="WatchFolder" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="LibraryFolders" Relationship="MediaPlayerDBModel.FK_LibraryFolder_Library" FromRole="Library" ToRole="LibraryFolder" />
+        </EntityType>
+        <EntityType Name="LibraryFolder">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="Path" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="LibraryId" Type="Int32" Nullable="false" />
+          <Property Name="IsExpanded" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Library" Relationship="MediaPlayerDBModel.FK_LibraryFolder_Library" FromRole="LibraryFolder" ToRole="Library" />
+          <Property Name="ParentFolder" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Playlist">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="MediaItems" Relationship="MediaPlayerDBModel.PlaylistItem" FromRole="Playlist" ToRole="MediaItem" />
+        </EntityType>
+        <Association Name="FK_LibraryFolder_Library">
+          <End Type="MediaPlayerDBModel.Library" Role="Library" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="MediaPlayerDBModel.LibraryFolder" Role="LibraryFolder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Library">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="LibraryFolder">
+              <PropertyRef Name="LibraryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="MediaItem">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Album" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Artist" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="BitRate" Type="Int32" Nullable="false" />
+          <Property Name="Comment" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="Duration" Type="Int64" Nullable="false" />
+          <Property Name="FilePath" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="Folder" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="Genre" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Year" Type="Int32" />
+          <Property Name="Track" Type="Int32" />
+          <Property Name="Type" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Playlists" Relationship="MediaPlayerDBModel.PlaylistItem" FromRole="MediaItem" ToRole="Playlist" />
+        </EntityType>
+        <Association Name="PlaylistItem">
+          <End Type="MediaPlayerDBModel.MediaItem" Role="MediaItem" Multiplicity="*" />
+          <End Type="MediaPlayerDBModel.Playlist" Role="Playlist" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MediaPlayerDBModelStoreContainer" CdmEntityContainer="MediaPlayerDBEntities">
+          <EntitySetMapping Name="Genres">
+            <EntityTypeMapping TypeName="MediaPlayerDBModel.Genre">
+              <MappingFragment StoreEntitySet="Genre">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Libraries">
+            <EntityTypeMapping TypeName="MediaPlayerDBModel.Library">
+              <MappingFragment StoreEntitySet="Library">
+                <ScalarProperty Name="WatchFolder" ColumnName="WatchFolder" />
+                <ScalarProperty Name="Path" ColumnName="Path" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LibraryFolders">
+            <EntityTypeMapping TypeName="MediaPlayerDBModel.LibraryFolder">
+              <MappingFragment StoreEntitySet="LibraryFolder">
+                <ScalarProperty Name="ParentFolder" ColumnName="ParentFolder" />
+                <ScalarProperty Name="IsExpanded" ColumnName="IsExpanded" />
+                <ScalarProperty Name="LibraryId" ColumnName="LibraryId" />
+                <ScalarProperty Name="Path" ColumnName="Path" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Playlists">
+            <EntityTypeMapping TypeName="MediaPlayerDBModel.Playlist">
+              <MappingFragment StoreEntitySet="Playlist">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MediaItems">
+            <EntityTypeMapping TypeName="MediaPlayerDBModel.MediaItem">
+              <MappingFragment StoreEntitySet="MediaItem">
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Track" ColumnName="Track" />
+                <ScalarProperty Name="Year" ColumnName="Year" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Genre" ColumnName="Genre" />
+                <ScalarProperty Name="Folder" ColumnName="Folder" />
+                <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+                <ScalarProperty Name="Duration" ColumnName="Duration" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="BitRate" ColumnName="BitRate" />
+                <ScalarProperty Name="Artist" ColumnName="Artist" />
+                <ScalarProperty Name="Album" ColumnName="Album" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="PlaylistItem" TypeName="MediaPlayerDBModel.PlaylistItem" StoreEntitySet="PlaylistItem">
+            <EndProperty Name="Playlist">
+              <ScalarProperty Name="Id" ColumnName="PlaylistId" />
+            </EndProperty>
+            <EndProperty Name="MediaItem">
+              <ScalarProperty Name="Id" ColumnName="MediaItemId" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

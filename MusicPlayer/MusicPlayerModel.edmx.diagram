@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4a7a454f2acd4ec59b2195e31e24b63c" Name="Diagram1">
+        <EntityTypeShape EntityType="MediaPlayerDBModel.Genre" Width="1.5" PointX="5.75" PointY="0.75" />
+        <EntityTypeShape EntityType="MediaPlayerDBModel.Library" Width="1.5" PointX="2.75" PointY="5" />
+        <EntityTypeShape EntityType="MediaPlayerDBModel.LibraryFolder" Width="1.5" PointX="5" PointY="4.875" />
+        <EntityTypeShape EntityType="MediaPlayerDBModel.Playlist" Width="1.5" PointX="3" PointY="2.125" />
+        <AssociationConnector Association="MediaPlayerDBModel.FK_LibraryFolder_Library" />
+        <EntityTypeShape EntityType="MediaPlayerDBModel.MediaItem" Width="1.5" PointX="0.75" PointY="0.75" />
+        <AssociationConnector Association="MediaPlayerDBModel.PlaylistItem" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

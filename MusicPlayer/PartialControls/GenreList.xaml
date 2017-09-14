@@ -1,0 +1,53 @@
+﻿<UserControl
+    x:Class="MusicPlayer.PartialControls.GenreList"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:cmd="http://www.galasoft.ch/mvvmlight"
+    xmlns:ctrl="clr-namespace:Itenso.Windows.Controls.ListViewLayout;assembly=Itenso.Windows.Controls.ListViewLayout"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+    xmlns:local="clr-namespace:MusicPlayer.PartialControls"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="100"
+    d:DesignWidth="300"
+    mc:Ignorable="d">
+    <Grid Background="#686868">
+        <ListView
+            x:Name="lvGenreList"
+            Grid.Row="1"
+            Margin="0,0,0,0"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch"
+            ctrl:ListViewLayoutManager.Enabled="true"
+            Background="#686868"
+            Foreground="White"
+            ItemsSource="{Binding GenreFilters}"
+            SelectedItem="{Binding Path=SelectedGenreFilter}">
+            <ListView.Resources>
+                <Style TargetType="ListViewItem">
+                    <Style.Triggers>
+                        <Trigger Property="IsSelected" Value="true">
+                            <Setter Property="Background" Value="CornflowerBlue" />
+                        </Trigger>
+                        <Trigger Property="Control.IsMouseOver" Value="true">
+                            <Setter Property="Background" Value="#FF99ADDF" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </ListView.Resources>
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="MouseDoubleClick">
+                    <cmd:EventToCommand Command="{Binding GenreFilterCommand}" />
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn
+                        ctrl:ProportionalColumn.Width="1"
+                        DisplayMemberBinding="{Binding}"
+                        Header="Genre Filter" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</UserControl>

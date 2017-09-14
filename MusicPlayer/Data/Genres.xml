@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <string>8bit</string>
+  <string>A cappella</string>
+  <string>Acid Jazz</string>
+  <string>Acid Rock</string>
+  <string>Acoustic Blues</string>
+  <string>Adult Alternative</string>
+  <string>Adult Contemporary</string>
+  <string>Adult-Oriented Rock</string>
+  <string>Africa</string>
+  <string>Afro Punk</string>
+  <string>Afro-Beat</string>
+  <string>Afro-Pop</string>
+  <string>Alternative</string>
+  <string>Alternative Country</string>
+  <string>Alternative Folk</string>
+  <string>Alternative Rap</string>
+  <string>Alternative Rock</string>
+  <string>Alternative Rock</string>
+  <string>Alternativo &amp; Rock Latino</string>
+  <string>Ambient</string>
+  <string>American Trad Rock</string>
+  <string>Americana</string>
+  <string>Anatolian Rock</string>
+  <string>Anime</string>
+  <string>Arena Rock</string>
+  <string>Argentine tango</string>
+  <string>Art Punk</string>
+  <string>Art Rock</string>
+  <string>Asia</string>
+  <string>Australia</string>
+  <string>Avant-Garde</string>
+  <string>Avant-Garde Jazz</string>
+  <string>Baladas y Boleros</string>
+  <string>Barbershop</string>
+  <string>Baroque</string>
+  <string>Bassline</string>
+  <string>Bebop</string>
+  <string>Big Band</string>
+  <string>Bitpop</string>
+  <string>Blue Note</string>
+  <string>Bluegrass</string>
+  <string>Blues</string>
+  <string>Blues-Rock</string>
+  <string>Bop</string>
+  <string>Bossa Nova</string>
+  <string>Bounce</string>
+  <string>Brazilian</string>
+  <string>Breakbeat</string>
+  <string>British Invasion</string>
+  <string>Britpop</string>
+  <string>Brostep</string>
+  <string>Bubblegum Pop</string>
+  <string>Cajun</string>
+  <string>Calypso</string>
+  <string>Caribbean</string>
+  <string>CCM</string>
+  <string>Celtic</string>
+  <string>Celtic Folk</string>
+  <string>Chamber Music</string>
+  <string>Chamber Pop</string>
+  <string>Chant</string>
+  <string>Chanukah</string>
+  <string>Chicago Blues</string>
+  <string>Chicano</string>
+  <string>Children’s Music</string>
+  <string>Chiptune</string>
+  <string>Chiptune</string>
+  <string>Choral</string>
+  <string>Christian &amp; Gospel</string>
+  <string>Christian Metal</string>
+  <string>Christian Pop</string>
+  <string>Christian Rap</string>
+  <string>Christian Rock</string>
+  <string>Christmas</string>
+  <string>Christmas: Children’s</string>
+  <string>Christmas: Classic</string>
+  <string>Christmas: Classical</string>
+  <string>Christmas: Jazz</string>
+  <string>Christmas: Modern</string>
+  <string>Christmas: Pop</string>
+  <string>Christmas: R&amp;B</string>
+  <string>Christmas: Religious</string>
+  <string>Christmas: Rock</string>
+  <string>Classic</string>
+  <string>Classic Blues</string>
+  <string>Classic Christian</string>
+  <string>Classical</string>
+  <string>Classical Crossover</string>
+  <string>Club / Club</string>
+  <string>College Rock</string>
+  <string>Comedy</string>
+  <string>Commercial</string>
+  <string>Conjunto</string>
+  <string>Conjunto Progressive</string>
+  <string>Contemporary Bluegrass</string>
+  <string>Contemporary Blues</string>
+  <string>Contemporary Celtic</string>
+  <string>Contemporary Country</string>
+  <string>Contemporary Folk</string>
+  <string>Contemporary Gospel</string>
+  <string>Contemporary Jazz</string>
+  <string>Contemporary Latin</string>
+  <string>Contemporary R&amp;B</string>
+  <string>Contemporary Singer/Songwriter</string>
+  <string>Cool</string>
+  <string>Country</string>
+  <string>Country Blues</string>
+  <string>Country Gospel</string>
+  <string>Country Pop</string>
+  <string>Crossover Jazz</string>
+  <string>Crunk</string>
+  <string>Dance</string>
+  <string>Dance Pop</string>
+  <string>Dancehall</string>
+  <string>Dangdut</string>
+  <string>Death Metal / Black Metal</string>
+  <string>Deep House</string>
+  <string>Delta Blues</string>
+  <string>Dirty South</string>
+  <string>Disco</string>
+  <string>Disney</string>
+  <string>Dixieland</string>
+  <string>Doo Wop</string>
+  <string>Doo-wop</string>
+  <string>Downtempo</string>
+  <string>Dream Pop</string>
+  <string>Drinking Songs</string>
+  <string>Drone</string>
+  <string>Drum &amp; Bass</string>
+  <string>Dub</string>
+  <string>Dubstep</string>
+  <string>Early Music</string>
+  <string>East Coast Rap</string>
+  <string>Easter</string>
+  <string>Easy Listening</string>
+  <string>Electric Blues</string>
+  <string>Electro</string>
+  <string>Electro House</string>
+  <string>Electro Pop</string>
+  <string>Electronic</string>
+  <string>Electronic Rock</string>
+  <string>Electronica</string>
+  <string>Electro-swing</string>
+  <string>Enka</string>
+  <string>Environmental</string>
+  <string>Ethio-jazz</string>
+  <string>Europe</string>
+  <string>Exercise</string>
+  <string>Experimental Rock</string>
+  <string>Fitness &amp; Workout</string>
+  <string>Flamenco / Spanish Flamenco</string>
+  <string>Folk-Rock</string>
+  <string>Foreign Cinema</string>
+  <string>France</string>
+  <string>French Pop</string>
+  <string>Funk</string>
+  <string>Fusion</string>
+  <string>Gangsta Rap</string>
+  <string>Garage</string>
+  <string>German Folk</string>
+  <string>German Pop</string>
+  <string>Glam Rock</string>
+  <string>Glitch Hop</string>
+  <string>Gospel</string>
+  <string>Goth / Gothic Rock</string>
+  <string>Gothic Metal</string>
+  <string>Gregorian Chant</string>
+  <string>Grunge</string>
+  <string>Gypsy Jazz</string>
+  <string>Hair Metal</string>
+  <string>Halloween</string>
+  <string>Hard Bop</string>
+  <string>Hard Dance</string>
+  <string>Hard Rock</string>
+  <string>Hard Rock</string>
+  <string>Hardcore</string>
+  <string>Hardcore Punk</string>
+  <string>Hardcore Rap</string>
+  <string>Hardstyle</string>
+  <string>Hawaii</string>
+  <string>Healing</string>
+  <string>High Classical</string>
+  <string>Hi-NRG / Eurodance</string>
+  <string>Hip-Hop</string>
+  <string>Hip-Hop/Rap</string>
+  <string>Holiday</string>
+  <string>Holiday: Other</string>
+  <string>Honky Tonk</string>
+  <string>House</string>
+  <string>IDM/Experimental</string>
+  <string>Impressionist</string>
+  <string>Indian Ghazal</string>
+  <string>Indian Pop</string>
+  <string>Indie Folk</string>
+  <string>Indie Pop</string>
+  <string>Indie Rock</string>
+  <string>Industrial</string>
+  <string>Industrial</string>
+  <string>Inspirational – Christian &amp; Gospel</string>
+  <string>Instrumental</string>
+  <string>Jackin House</string>
+  <string>Jam Bands</string>
+  <string>Japan</string>
+  <string>Japanese Pop</string>
+  <string>Jazz</string>
+  <string>Jingles</string>
+  <string>J-Pop</string>
+  <string>J-Punk</string>
+  <string>J-Rock</string>
+  <string>J-Ska</string>
+  <string>J-Synth</string>
+  <string>Jungle / Drum’n’bass</string>
+  <string>Karaoke</string>
+  <string>Kayokyoku</string>
+  <string>Klezmer</string>
+  <string>K-Pop</string>
+  <string>Latin</string>
+  <string>Latin Jazz</string>
+  <string>Latin Jazz</string>
+  <string>Latin Rap</string>
+  <string>Lo-fi</string>
+  <string>Lounge</string>
+  <string>Love Song</string>
+  <string>Lullabies</string>
+  <string>Mainstream Jazz</string>
+  <string>March</string>
+  <string>Medieval</string>
+  <string>Meditation</string>
+  <string>Metal</string>
+  <string>Middle East</string>
+  <string>Minimalism</string>
+  <string>Modern Composition</string>
+  <string>Modern Soul</string>
+  <string>Motown</string>
+  <string>Musicals</string>
+  <string>Nature</string>
+  <string>Neo-Soul</string>
+  <string>New Acoustic</string>
+  <string>New Age</string>
+  <string>New Mex</string>
+  <string>New Wave</string>
+  <string>Noise Rock</string>
+  <string>North America</string>
+  <string>Northern Soul</string>
+  <string>Novelty</string>
+  <string>Nuevo Flamenco</string>
+  <string>Ode</string>
+  <string>Old School Rap</string>
+  <string>Opera</string>
+  <string>Opera</string>
+  <string>Orchestral</string>
+  <string>Orchestral Pop</string>
+  <string>Original Score</string>
+  <string>Outlaw Country</string>
+  <string>Polka</string>
+  <string>Pop</string>
+  <string>Pop Latino</string>
+  <string>Pop/Rock</string>
+  <string>Portuguese fado</string>
+  <string>Post Punk</string>
+  <string>Power Po</string>
+  <string>Praise &amp; Worship</string>
+  <string>Progressive Rock</string>
+  <string>Prog-Rock/Art Rock</string>
+  <string>Psychedelic</string>
+  <string>Psychedelic Soul</string>
+  <string>Punk</string>
+  <string>Qawwali</string>
+  <string>Quiet Storm</string>
+  <string>R&amp;B/Soul</string>
+  <string>Ragtime</string>
+  <string>Raíces</string>
+  <string>Rap</string>
+  <string>Reggae</string>
+  <string>Reggaeton y Hip-Hop</string>
+  <string>Regional Mexicano</string>
+  <string>Regstep</string>
+  <string>Relaxation</string>
+  <string>Renaissance</string>
+  <string>Rock</string>
+  <string>Rock &amp; Roll</string>
+  <string>Rockabilly</string>
+  <string>Romantic</string>
+  <string>Roots Reggae</string>
+  <string>Roots Rock</string>
+  <string>Salsa y Tropical</string>
+  <string>Shoegaze</string>
+  <string>Sing-Along</string>
+  <string>Singer/Songwriter</string>
+  <string>Singer/Songwriter</string>
+  <string>Ska</string>
+  <string>Smooth Jazz</string>
+  <string>Soca</string>
+  <string>Soft Rock</string>
+  <string>Soul</string>
+  <string>Soul Blues</string>
+  <string>Soundtrack</string>
+  <string>Soundtrack</string>
+  <string>South Africa</string>
+  <string>South America</string>
+  <string>Southern Gospel</string>
+  <string>Southern Rock</string>
+  <string>Southern Soul</string>
+  <string>Spoken Word</string>
+  <string>Standards</string>
+  <string>Standup Comedy</string>
+  <string>Steampunk</string>
+  <string>Stories</string>
+  <string>Surf</string>
+  <string>Swing</string>
+  <string>Synthpop</string>
+  <string>Techno</string>
+  <string>Teen Pop</string>
+  <string>Tex-Mex</string>
+  <string>Tex-Mex</string>
+  <string>Tex-Mex / Tejano</string>
+  <string>Thanksgiving</string>
+  <string>Time Lord Rock (Trock)</string>
+  <string>Trad Jazz</string>
+  <string>Traditional Bluegrass</string>
+  <string>Traditional Celtic</string>
+  <string>Traditional Country</string>
+  <string>Traditional Folk</string>
+  <string>Traditional Gospel</string>
+  <string>Traditional Pop</string>
+  <string>Trance</string>
+  <string>Trap (thx Luke Allfree)</string>
+  <string>Travel</string>
+  <string>Trip Hop</string>
+  <string>Turntablism</string>
+  <string>TV Soundtrack</string>
+  <string>TV Themes</string>
+  <string>Underground Rap</string>
+  <string>Urban Cowboy</string>
+  <string>Vaudeville</string>
+  <string>Vocal</string>
+  <string>Vocal Jazz</string>
+  <string>Vocal Pop</string>
+  <string>Wedding Music</string>
+  <string>West Coast Rap</string>
+  <string>World</string>
+  <string>Worldbeat</string>
+  <string>Zydeco</string>
+</ArrayOfString>
